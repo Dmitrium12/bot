@@ -1,9 +1,10 @@
 from settings import ads_xpath
 from time import sleep
+from selenium.webdriver.common.by import By
 
 
 def adclick_functions(self):
-    ads = self.driver.find_element_by_xpath(ads_xpath)
+    ads = self.driver.find_element(By.XPATH, ads_xpath)
     ads.click()
     while "m/v/?vl=" not in self.driver.current_url:
         sleep(0.1)
@@ -22,13 +23,13 @@ def adclick_functions(self):
                 finder += 1
         while True:
             if i <= int(adc):
-                ad = self.driver.find_element_by_xpath('//*[@id="l0l' + str(i) + '"]')
-                ad = ad.find_element_by_xpath('//*[@id="da' + str(i) + 'a"]')
-                if ad.find_element_by_xpath('//*[@id="tg_' + str(i) + '"]').get_attribute("class") \
-                        .split().count("adf") > 0:
+                ad = self.driver.find_element(By.XPATH, '//*[@id="l0l' + str(i) + '"]')
+                ad = ad.find_element(By.XPATH, '//*[@id="da' + str(i) + 'a"]')
+                if ad.find_element(By.XPATH, '//*[@id="tg_' + str(i) + '"]').get_attribute("class").split()\
+                        .count("adf") > 0:
                     ad.click()
                     sleep(1)
-                    adr = self.driver.find_element_by_xpath('//*[@id="l' + str(i) + '"]')
+                    adr = self.driver.find_element(By.XPATH, '//*[@id="l' + str(i) + '"]')
                     adr.click()
                     sleep(28)
                     self.driver.switch_to.window(self.driver.window_handles[-1])
