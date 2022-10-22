@@ -1,15 +1,8 @@
-# import time
-# import requests
-# from fake_useragent import UserAgent
-#
-# response = requests.get(f'https://www.neobux.com/adalert/g/?t=C{int(time.time() * 1000)}V284', cookies={
-#     "CFID": "Z1l5vw50e76dql5dju76cu4m844xp2pha848v5ot0ufx7bhn71n",
-#     "CFTOKEN": "Z1l5vw50e76dql5dju76cu4m844xp2pha848v5ot0ufx7bhn71n",
-#     "NB0": "035085F18491F14F64528704B4E62C2C",
-#     "NB1": "E62263159A9C5EB947E2E69798FAC13EAF42EA83F061A90BA965F066C17B089FED3B1305B3C3CFED00E7076A5293F6796FBF3C3EE3365D814844EC69F9FDD82CDA94C871F151C764299413FC91F8BD8704EA438EACDCA3698EAFEBF7B8FA82C8",
-#     "NB2": "CBAB1FE854EBE0A8B887466873B0075EE6CF5D11D262EF6A824E6C8B27FC99861EF7F80E74B247D7AEC03B2E5CED2B09E387851637856B694ECCF67971973ADF9FE1EFA5FF7EE05D68945ED4F6DBFFBFBA754DDAAC41F0A5D928CCBE1DADF30D",
-#     "__cf_bm": "qAyryyg0UHrOfZS09VaGCqD8JZW.NGymXF4E5_BXcv4-1665908943-0-AU5vBp8917L22GfqdeMrMEe4VA/f4b6VID4Ls7jtT6WnYWgVnXn0UwKF2Cm+sjE1ws/LhVPFDbJObsCNInof7faHnCwQsTgl3J/x7+BOzslmApUn6SMZI+clGOSr7ZVffA=="
-# }, headers={'User-Agent': UserAgent().chrome})
-# print(response.cookies)
-li = ["as"]
-print(li.count("asf"))
+import glob
+import time
+
+time_start = time.time()
+text_files = glob.glob("C:\**\chrome.exe", recursive=True)
+
+print(text_files)
+print(time.time() - time_start)
